@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PropertyHub — Detail Properti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="./assets/style/property.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ══ NAVBAR ══════════════════════════════════════════ -->
+<nav class="navbar">
+  <div class="navbar__logo"><a href="./propertyList.html" id="tittle_head">MakelarProperty<span>Hub</span></a></div>
+
+  <div class="navbar__right">
+    <!-- Greeting -->
+    <div class="navbar__greeting" id="greeting-toggle">
+      Hi, Username!
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </div>
+
+    <!-- Profile icon button -->
+    <button class="icon-btn" id="profile-btn" title="Profil">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="8" r="4"/>
+        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+      </svg>
+    </button>
+
+    <!-- Notification bell -->
+    <button class="icon-btn" title="Notifikasi">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+        <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+      </svg>
+      <span class="notif-dot"></span>
+    </button>
+
+    <!-- Profile Dropdown -->
+    <div class="profile-dropdown" id="profile-dropdown">
+      <div class="profile-dropdown__header">
+        <div class="profile-avatar-wrap">
+          <div class="profile-avatar" id="profile-avatar-display">
+            <!-- shows avatar image or default icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+          </div>
+          <div class="edit-avatar-btn" id="edit-avatar-btn" title="Ganti foto profil">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="profile-dropdown__title">Username</div>
+        <p>Klik field di bawah untuk mengubah profil</p>
+      </div>
+
+      <div class="profile-dropdown__body">
+        <div class="profile-field">
+          <span class="profile-field__label">Nama</span>
+          <span class="profile-field__value">
+            Set Now
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </span>
+        </div>
+        <div class="profile-field">
+          <span class="profile-field__label">Bio</span>
+          <span class="profile-field__value">
+            Set Now
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </span>
+        </div>
+        <div class="profile-field">
+          <span class="profile-field__label">Gender</span>
+          <span class="profile-field__value">
+            Set Now
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </span>
+        </div>
+        <div class="profile-field">
+          <span class="profile-field__label">Tanggal Lahir</span>
+          <span class="profile-field__value">
+            Set Now
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </span>
+        </div>
+        <div class="profile-field">
+          <span class="profile-field__label">No. Telepon</span>
+          <span class="profile-field__value">
+            Set Now
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </span>
+        </div>
+        <div class="profile-field">
+          <span class="profile-field__label">Email</span>
+          <span class="profile-field__value">
+            Set Now
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="profile-dropdown__footer">
+        <a href="./Login.html" class="btn-logout" style="text-decoration: none; justify-content: center; display: flex;">Keluar</a>
+      </div>
+    </div>
+    <!-- /Profile Dropdown -->
+  </div>
+</nav>
+
+<section class="hero" id="hero-section">
+
+  <img
+    class="hero__image"
+    id="hero-img"
+    src="https://jakartaproperty.id/wp-content/uploads/2025/08/IMG_3266-scaled.jpeg"
+    alt="Foto Properti"
+  />
+
+  <div class="hero__overlay"></div>
+
+  <button class="btn-view-photo" id="view-photo-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <rect x="3" y="3" width="18" height="18" rx="2"/>
+      <circle cx="8.5" cy="8.5" r="1.5"/>
+      <polyline points="21 15 16 10 5 21"/>
+    </svg>
+    Lihat Foto
+  </button>
+
+</section>
+
+<!--  MAIN CONTENT -->
+<div class="main-layout">
+
+  <!-- LEFT: Property Info -->
+  <article class="property-info">
+    <h1>Bintaro Tangsel nuansa bali</h1>
+    <p class="property-info__address">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+      Banten, Kabupaten Tangerang, Pagedangan
+    </p>
+
+    <!-- Stats pills -->
+    <div class="stats-row">
+      <div class="stat-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        7 Kamar Tidur
+      </div>
+      <div class="stat-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M5 12H19M5 12a2 2 0 0 1-2-2V6h3v3h12V6h3v4a2 2 0 0 1-2 2M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/>
+        </svg>
+        7 Kamar Mandi
+      </div>
+      <div class="stat-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <path d="M3 9h18M9 21V9"/>
+        </svg>
+        558m²
+      </div>
+      <div class="stat-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 8v4l3 3"/>
+        </svg>
+        Keamanan terjamin
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <p class="property-info__desc">
+    RUMAH NUANSA VILLA BALI, BANGUNAN TERAWAT DAN SIAP HUNI.
+    <br>
+    ———————————
+    <br>
+    KONDISI RUMAH:
+    <br>
+    • Single House
+    <br>
+    • Jenis Bangunan: Secondary
+    <br>
+    • FURNISHED
+    <br>
+    ———————————
+    <br>
+    FASILITAS RUMAH:
+    <br>
+    • Gudang
+    <br>
+    • Ruang Gym
+    <br>
+    • Ruang Sepatu
+    <br>
+    • Kantor
+    <br>
+    • Dapur Bersih & Kotor
+    <br>
+    • Kolam Renang
+    <br>
+    • Ruang Tamu
+    <br>
+    • Mushollah
+    <br>
+    • Ruang Santai Atas
+    <br>
+    ———————————
+    <br>
+    SPESIFIKASI UNIT:
+    <br>
+    LT: (+-)600 m² | LB: (+-)450 m²
+    <br>
+    KT: 4 | KM: 5
+    <br>
+    KP: 2 | KMP: 1
+    <br>
+    Bangunan: 1.5 Lantai
+    <br>
+    Listrik: 16.000
+    <br>
+    Carport: 8
+    <br>
+    Hadap: Barat
+    <br>
+    SERTIFIKAT: SHM
+    <br>
+
+    PRICE: Rp 17 M (Nego)
+    </p>
+  </article>
+
+  <!-- RIGHT: Booking Card -->
+  <aside class="booking-card">
+    <div class="badge-available">Tersedia Sekarang</div>
+
+    <div class="booking-card__price" id="price-display">Rp 17.000.000.000 <span></span></div>
+
+    <div class="mode-toggle">
+      <button class="mode-btn mode-btn--active" id="rent-btn">Sewa</button>
+      <button class="mode-btn mode-btn--outline" id="buy-btn">Beli</button>
+    </div>
+
+    <!-- Start Date -->
+    <div class="calendar-wrap">
+      <button class="start-date-btn" id="date-toggle-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        <span id="selected-date-label">Pilih tanggal mulai</span>
+      </button>
+
+      <div class="calendar-popup" id="calendar-popup">
+        <div class="cal-nav">
+          <button id="cal-prev">‹</button>
+          <div class="cal-nav__title">
+            <span id="cal-year"></span><span id="cal-month"></span>
+          </div>
+          <button id="cal-next">›</button>
+        </div>
+        <div class="cal-grid" id="cal-grid"></div>
+      </div>
+    </div>
+
+    <!-- Duration -->
+    <p class="duration-label">Berapa lama?</p>
+    <div class="duration-row">
+      <input type="number" class="duration-input" id="duration-input"
+             placeholder="—" min="1" value="" />
+      <select class="duration-select" id="duration-unit">
+        <option value="days">hari</option>
+        <option value="months" selected>bulan</option>
+        <option value="years">tahun</option>
+      </select>
+    </div>
+
+    <!-- Price Summary -->
+    <div class="price-summary">
+      <div class="price-row">
+        <span class="price-row__label">Harga × Sewa</span>
+        <span class="price-row__val" id="price-x-rent">Rp —</span>
+      </div>
+      <div class="price-row price-row--total">
+        <span class="price-row__label">Total</span>
+        <span class="price-row__val" id="price-total">Rp —</span>
+      </div>
+    </div>
+
+    <button class="btn-purchase">Beli Sekarang</button>
+    <a href="#" class="chat-link">Chat dengan Penjual →</a>
+  </aside>
+
+</div>
+<div class="gallery-modal" id="gallery-modal">
+  <button class="gallery-modal__close" id="gallery-close">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
+
+  <div class="gallery-modal__main">
+    <button class="gallery-nav gallery-nav--prev" id="gal-prev">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </button>
+
+    <img id="gallery-main-img" src="" alt="Foto Properti" />
+
+    <button class="gallery-nav gallery-nav--next" id="gal-next">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="gallery-thumbs" id="gallery-thumbs"></div>
+</div>
+
+<script>
+  const GALLERY_IMAGES = [
+    'https://jakartaproperty.id/wp-content/uploads/2025/08/IMG_9036.jpeg', 
+    'https://jakartaproperty.id/wp-content/uploads/2025/08/IMG_9030.jpeg', 
+    'https://jakartaproperty.id/wp-content/uploads/2025/08/IMG_3302-scaled.jpeg',
+    'https://jakartaproperty.id/wp-content/uploads/2025/08/IMG_3246-scaled.jpeg', 
+    'https://jakartaproperty.id/wp-content/uploads/2025/08/IMG_3239-scaled.jpeg', 
+  ];
+
+  /* ─ Utility  */
+  const $ = id => document.getElementById(id);
+
+  /* ─ Profile Dropdown */
+  const profileBtn      = $('profile-btn');
+  const greetingToggle  = $('greeting-toggle');
+  const profileDropdown = $('profile-dropdown');
+
+  function toggleDropdown(open) {
+    profileDropdown.classList.toggle('open', open);
+    greetingToggle.classList.toggle('open', open);
+  }
+
+  [profileBtn, greetingToggle].forEach(el => {
+    el.addEventListener('click', e => {
+      e.stopPropagation();
+      toggleDropdown(!profileDropdown.classList.contains('open'));
+    });
+  });
+
+  document.addEventListener('click', e => {
+    if (!profileDropdown.contains(e.target)) toggleDropdown(false);
+  });
+
+  /* Gallery State */
+  let currentGallIdx = 0;
+
+  function renderThumbs() {
+    const strip = $('gallery-thumbs');
+    strip.innerHTML = '';
+    GALLERY_IMAGES.forEach((src, i) => {
+      const img = document.createElement('img');
+      img.src       = src;
+      img.alt       = `Foto ${i + 1}`;
+      img.className = 'gallery-thumb' + (i === currentGallIdx ? ' active' : '');
+      img.addEventListener('click', () => showGalleryImg(i));
+      strip.appendChild(img);
+    });
+  }
+
+  function showGalleryImg(idx) {
+    if (!GALLERY_IMAGES.length) return;
+    currentGallIdx = (idx + GALLERY_IMAGES.length) % GALLERY_IMAGES.length;
+    $('gallery-main-img').src = GALLERY_IMAGES[currentGallIdx];
+    renderThumbs();
+  }
+
+  /* Gallery Modal */
+  const galleryModal = $('gallery-modal');
+  const viewPhotoBtn = $('view-photo-btn');
+
+  viewPhotoBtn.addEventListener('click', () => {
+    galleryModal.classList.add('open');
+    showGalleryImg(0);
+  });
+
+  $('gallery-close').addEventListener('click', () => galleryModal.classList.remove('open'));
+
+  galleryModal.addEventListener('click', e => {
+    if (e.target === galleryModal) galleryModal.classList.remove('open');
+  });
+
+  $('gal-prev').addEventListener('click', () => showGalleryImg(currentGallIdx - 1));
+  $('gal-next').addEventListener('click', () => showGalleryImg(currentGallIdx + 1));
+
+  document.addEventListener('keydown', e => {
+    if (!galleryModal.classList.contains('open')) return;
+    if (e.key === 'ArrowLeft')  showGalleryImg(currentGallIdx - 1);
+    if (e.key === 'ArrowRight') showGalleryImg(currentGallIdx + 1);
+    if (e.key === 'Escape')     galleryModal.classList.remove('open');
+  });
+
+  /* Calendar */
+  const MONTHS = ['Januari','Februari','Maret','April','Mei','Juni',
+                  'Juli','Agustus','September','Oktober','November','Desember'];
+  const DAYS   = ['Min','Sen','Sel','Rab','Kam','Jum','Sab'];
+
+  let calDate    = new Date();
+  let selectedDate = null;
+
+  const calPopup        = $('calendar-popup');
+  const dateToggleBtn   = $('date-toggle-btn');
+  const selectedDateLbl = $('selected-date-label');
+
+  dateToggleBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    calPopup.classList.toggle('open');
+    renderCalendar();
+  });
+
+  document.addEventListener('click', e => {
+    if (!calPopup.contains(e.target) && e.target !== dateToggleBtn) {
+      calPopup.classList.remove('open');
+    }
+  });
+
+  $('cal-prev').addEventListener('click', () => {
+    calDate.setMonth(calDate.getMonth() - 1);
+    renderCalendar();
+  });
+  $('cal-next').addEventListener('click', () => {
+    calDate.setMonth(calDate.getMonth() + 1);
+    renderCalendar();
+  });
+
+  function renderCalendar() {
+    $('cal-year').textContent  = calDate.getFullYear();
+    $('cal-month').textContent = MONTHS[calDate.getMonth()];
+
+    const grid = $('cal-grid');
+    grid.innerHTML = '';
+
+    DAYS.forEach(d => {
+      const el = document.createElement('div');
+      el.className   = 'cal-day-name';
+      el.textContent = d;
+      grid.appendChild(el);
+    });
+
+    const firstDay  = new Date(calDate.getFullYear(), calDate.getMonth(), 1).getDay();
+    const daysInMon = new Date(calDate.getFullYear(), calDate.getMonth() + 1, 0).getDate();
+    const today     = new Date();
+
+    for (let i = 0; i < firstDay; i++) {
+      const el = document.createElement('div');
+      el.className = 'cal-day empty';
+      grid.appendChild(el);
+    }
+
+    for (let d = 1; d <= daysInMon; d++) {
+      const el       = document.createElement('div');
+      el.className   = 'cal-day';
+      el.textContent = d;
+
+      const thisDate = new Date(calDate.getFullYear(), calDate.getMonth(), d);
+
+      const isToday =
+        today.getFullYear() === thisDate.getFullYear() &&
+        today.getMonth()    === thisDate.getMonth()    &&
+        today.getDate()     === thisDate.getDate();
+
+      const isSelected = selectedDate &&
+        selectedDate.getFullYear() === thisDate.getFullYear() &&
+        selectedDate.getMonth()    === thisDate.getMonth()    &&
+        selectedDate.getDate()     === thisDate.getDate();
+
+      if (isToday)    el.classList.add('today');
+      if (isSelected) el.classList.add('selected');
+
+      el.addEventListener('click', () => {
+        selectedDate = new Date(calDate.getFullYear(), calDate.getMonth(), d);
+        selectedDateLbl.textContent =
+          `${d} ${MONTHS[calDate.getMonth()]} ${calDate.getFullYear()}`;
+        dateToggleBtn.classList.add('active');
+        calPopup.classList.remove('open');
+        renderCalendar();
+        calculatePrice();
+      });
+
+      grid.appendChild(el);
+    }
+  }
+
+  /*  Rent / Buy Toggle*/
+  const rentBtn    = $('rent-btn');
+  const buyBtn     = $('buy-btn');
+  const priceDisp  = $('price-display');
+  const durationEl = document.querySelector('.duration-label').parentElement;
+
+  let mode = 'rent';
+
+  rentBtn.addEventListener('click', () => {
+    mode = 'rent';
+    rentBtn.className = 'mode-btn mode-btn--active';
+    buyBtn.className  = 'mode-btn mode-btn--outline';
+    priceDisp.innerHTML = 'Rp 1.000.000 <span>/bulan</span>';
+    durationEl.style.display = '';
+    calculatePrice();
+  });
+
+  buyBtn.addEventListener('click', () => {
+    mode = 'buy';
+    buyBtn.className  = 'mode-btn mode-btn--active';
+    rentBtn.className = 'mode-btn mode-btn--outline';
+    priceDisp.innerHTML = 'Rp 850.000.000 <span>harga penuh</span>';
+    durationEl.style.display = 'none';
+    $('price-x-rent').textContent = 'Rp 850.000.000';
+    $('price-total').textContent  = 'Rp 850.000.000';
+  });
+
+  /*Price Calculation  */
+  const durationInput        = $('duration-input');
+  const durationUnit         = $('duration-unit');
+  const BASE_PRICE_PER_MONTH = 1_000_000;
+
+  function formatRp(n) {
+    return 'Rp ' + n.toLocaleString('id-ID');
+  }
+
+  function calculatePrice() {
+    if (mode === 'buy') return;
+    const qty  = parseInt(durationInput.value) || 0;
+    const unit = durationUnit.value;
+
+    let months = 0;
+    if (unit === 'days')   months = qty / 30;
+    if (unit === 'months') months = qty;
+    if (unit === 'years')  months = qty * 12;
+
+    const total = Math.round(BASE_PRICE_PER_MONTH * months);
+    $('price-x-rent').textContent = total > 0 ? formatRp(total) : 'Rp —';
+    $('price-total').textContent  = total > 0 ? formatRp(total) : 'Rp —';
+  }
+
+  durationInput.addEventListener('input', calculatePrice);
+  durationUnit.addEventListener('change', calculatePrice);
+
+  /*  Init */
+  renderCalendar();
+</script>
+</body>
+</html>

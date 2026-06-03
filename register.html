@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Account - MakelarPropertyHub</title>
+  <link rel="stylesheet" href="./assets/style/register.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<div class="page">
+
+  <!-- Bagian kiri-->
+  <div class="left">
+    <div class="circle-lg"></div>
+
+    <div class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/></svg>
+      </div>
+      <span class="logo-name">Makelar Property Hub</span>
+    </div>
+
+    <div class="left-body">
+      <div class="left-tag">🏡 Trusted Property Marketplace kayaknya</div>
+      <h2 class="left-headline">Find Your<br><span>Dream Home</span><br>Today with MPH</h2>
+      <p class="left-sub">Join thousands of buyers and sellers connecting on the most trusted property platform in Indonesia.</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat-item">
+        <div class="stat-num">12K+</div>
+        <div class="stat-label">Properties Listed</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">8.4K</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">98%</div>
+        <div class="stat-label">Satisfaction Rate</div>
+      </div>
+    </div>
+
+    <!-- floating Card-->
+    <div class="prop-card">
+      <div class="prop-card-label">Featured Listing</div>
+      <div class="prop-card-price">Rp 17.59 Miliar</div>
+      <div class="prop-card-loc">📍 Menteng, Jakarta Pusat</div>
+      <div class="prop-card-badge">✓ Verified</div>
+    </div>
+  </div>
+
+  <!-- Bagian Kanan-->
+  <div class="right">
+    <button class="back-btn" onclick="history.back()">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      <a href="./Login.html" class="link_back">back</a>
+    </button>
+
+    <div class="form-wrap">
+      <div class="form-eyebrow">Get Started</div>
+      <h1 class="form-title">Create Your<br>Account</h1>
+      <p class="form-sub">We're here to help you find the best property. <strong>Are you ready?</strong></p>
+
+      <div class="fields">
+        <div>
+          <label class="field-label" for="username">Username</label>
+          <div class="input-wrap">
+            <input id="username" type="text" placeholder="Enter Username" autocomplete="username"/>
+          </div>
+        </div>
+
+        <div>
+          <label class="field-label" for="password">Password</label>
+          <div class="input-wrap">
+            <input id="password" type="password" placeholder="Enter Password" autocomplete="new-password" oninput="checkStrength(this.value)"/>
+            <button class="eye-btn" onclick="togglePass('password',this)" tabindex="-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+          <div class="strength-bar" id="strength">
+            <div class="seg" id="s1"></div>
+            <div class="seg" id="s2"></div>
+            <div class="seg" id="s3"></div>
+            <div class="seg" id="s4"></div>
+          </div>
+        </div>
+
+        <div>
+          <label class="field-label" for="confirm">Confirm Password</label>
+          <div class="input-wrap">
+            <input id="confirm" type="password" placeholder="Confirm Password" autocomplete="new-password"/>
+            <button class="eye-btn" onclick="togglePass('confirm',this)" tabindex="-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94"/>
+                <path d="M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19"/>
+                <line x1="1" y1="1" x2="23" y2="23"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row-link">
+        <a href="./Login.html">Already have an account?</a>
+      </div>
+
+      <button class="btn-start" onclick="handleSubmit()"><a href="./propertyList.html" id="getstart">Get Started</a></button>
+
+      <div class="divider">or continue with</div>
+
+      <button class="btn-google">
+        <svg width="20" height="20" viewBox="0 0 48 48">
+          <path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.2l6.8-6.8C35.8 2.5 30.2 0 24 0 14.7 0 6.7 5.4 2.7 13.3l7.9 6.1C12.5 13 17.8 9.5 24 9.5z"/>
+          <path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.7c-.5 2.9-2.2 5.4-4.7 7l7.3 5.7c4.3-4 6.8-9.9 6.8-16.7z"/>
+          <path fill="#FBBC05" d="M10.6 28.6A14.8 14.8 0 019.5 24c0-1.6.3-3.1.7-4.6l-7.9-6.1A23.9 23.9 0 000 24c0 3.9.9 7.5 2.5 10.8l8.1-6.2z"/>
+          <path fill="#34A853" d="M24 48c6.2 0 11.5-2 15.3-5.5l-7.3-5.7c-2 1.4-4.6 2.2-8 2.2-6.2 0-11.5-3.5-13.4-8.8l-8.1 6.2C6.7 42.6 14.7 48 24 48z"/>
+        </svg>
+        Continue with Google
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function togglePass(id, btn) {
+    const input = document.getElementById(id);
+    const show = input.type === 'password';
+    input.type = show ? 'text' : 'password';
+    btn.innerHTML = show
+      ? `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+           <path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94"/>
+           <path d="M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19"/>
+           <line x1="1" y1="1" x2="23" y2="23"/>
+         </svg>`
+      : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+           <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+           <circle cx="12" cy="12" r="3"/>
+         </svg>`;
+  }
+
+  function checkStrength(val) {
+    const bar = document.getElementById('strength');
+    bar.classList.toggle('show', val.length > 0);
+    const checks = [val.length >= 8, /[A-Z]/.test(val), /[0-9]/.test(val), /[^A-Za-z0-9]/.test(val)];
+    const score = checks.filter(Boolean).length;
+    const colors = ['','weak','med','good','great'];
+    for (let i = 1; i <= 4; i++) {
+      const seg = document.getElementById('s' + i);
+      seg.className = 'seg' + (i <= score ? ' on ' + colors[score] : '');
+    }
+  }
+
+  function handleSubmit() {
+    const u = document.getElementById('username').value.trim();
+    const p = document.getElementById('password').value;
+    const c = document.getElementById('confirm').value;
+    if (!u || !p || !c) { alert('Please fill in all fields.'); return; }
+    if (p !== c) { alert('Passwords do not match!'); return; }
+    alert('Account created successfully! 🎉');
+  }
+</script>
+</body>
+</html>

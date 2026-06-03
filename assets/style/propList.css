@@ -1,0 +1,804 @@
+/* ==========================================================================
+  CSS VARIABLES & THEME CONFIGURATION
+   ========================================================================== */
+  
+:root {
+  --navy: #1a2f6e;
+  --navy-dark: #111e4a;
+  --navy-light: #2b44a0;
+  --accent: #3b5bdb;
+  --accent-soft: #e8ecfb;
+  --white: #ffffff;
+  --bg: #f2f4f9;
+  --sidebar-bg: #ffffff;
+  --border: #dde1ef;
+  --text: #111827;
+  --muted: #6b7280;
+  --muted-light: #9ca3af;
+  --card-shadow: 0 2px 16px rgba(26, 47, 110, 0.09);
+  --card-hover: 0 8px 32px rgba(26, 47, 110, 0.16);
+  --radius-card: 14px;
+  --radius-btn: 8px;
+}
+
+/* ==========================================================================
+  RESET & BASE STYLES
+   ========================================================================== */
+  
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+  PAGE SHELL LAYOUT
+   ========================================================================== */
+  
+.page {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+  SIDEBAR COMPONENT
+   ========================================================================== */
+  
+.sidebar {
+  width: 230px;
+  min-width: 230px;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.sidebar-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 22px 20px 16px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--navy);
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.sidebar-back:hover {
+  opacity: 0.7;
+}
+
+.sidebar-back svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--navy);
+  fill: none;
+  stroke-width: 2.5;
+}
+
+.sidebar-section {
+  padding: 18px 0 4px;
+}
+
+.sidebar-section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted-light);
+  padding: 0 20px 8px;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 20px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  border-radius: 0;
+}
+
+.sidebar-item:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.sidebar-item.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.sidebar-item svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--muted);
+  fill: none;
+  stroke-width: 2;
+}
+
+.sidebar-item:hover svg,
+.sidebar-item.active svg {
+  stroke: var(--accent);
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: 16px 20px;
+  border-top: 1px solid var(--border);
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #ef4444;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.logout-btn:hover {
+  opacity: 0.7;
+}
+
+.logout-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: #ef4444;
+  fill: none;
+  stroke-width: 2;
+}
+
+/* ==========================================================================
+  MAIN CONTENT CONTAINER
+   ========================================================================== */
+  
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+  NAVBAR COMPONENT
+   ========================================================================== */
+  
+.navbar {
+  background: var(--navy);
+  padding: 0 36px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 100;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.15s;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.nav-link.active {
+  color: white;
+  font-weight: 700;
+  border-bottom: 2px solid white;
+  padding-bottom: 2px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+}
+
+/* Profile Button */
+.profile-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+  position: relative;
+}
+
+.profile-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.profile-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: white;
+  fill: none;
+  stroke-width: 1.8;
+}
+
+/* Notification Bell */
+.notif-btn {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.notif-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke: white;
+  fill: none;
+  stroke-width: 2;
+}
+
+.notif-dot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  background: #ef4444;
+  border-radius: 50%;
+  border: 1.5px solid var(--navy);
+}
+
+/* Explore Button */
+.btn-explore {
+  background: white;
+  color: var(--navy);
+  border: none;
+  border-radius: var(--radius-btn);
+  padding: 9px 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.btn-explore:hover {
+  background: #e8ecfb;
+  transform: translateY(-1px);
+}
+
+.btn-explore:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+  PROFILE POPUP CURRENT USER
+   ========================================================================== */
+  
+.profile-popup {
+  display: none;
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 280px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 16px 48px rgba(26, 47, 110, 0.2);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  animation: popIn 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  z-index: 200;
+}
+
+.profile-popup.open {
+  display: block;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(-8px);
+    transform-origin: top right;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.popup-header {
+  background: var(--navy);
+  padding: 18px 20px 14px;
+  text-align: center;
+}
+
+.popup-header h3 {
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.popup-avatar-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 20px 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.popup-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #dde1ef 0%, #c7ceea 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  border: 3px solid var(--border);
+  overflow: hidden;
+}
+
+.popup-avatar svg {
+  width: 36px;
+  height: 36px;
+  stroke: var(--muted);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.popup-edit-btn {
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: opacity 0.15s;
+}
+
+.popup-edit-btn:hover {
+  opacity: 0.7;
+}
+
+.popup-edit-btn svg {
+  width: 12px;
+  height: 12px;
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 2;
+}
+
+.popup-fields {
+  padding: 8px 0;
+}
+
+.popup-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 20px;
+  border-bottom: 1px solid #f3f4f8;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.popup-field:last-child {
+  border-bottom: none;
+}
+
+.popup-field:hover {
+  background: var(--accent-soft);
+}
+
+.popup-field-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.popup-field-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.popup-field-value {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.popup-field svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--muted);
+  fill: none;
+  stroke-width: 2;
+}
+
+/* ==========================================================================
+  CONTENT INNER ARCHITECTURE
+   ========================================================================== */
+  
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px 36px 40px;
+}
+
+/* ==========================================================================
+  FILTER / SEARCH BAR COMPONENT
+   ========================================================================== */
+  
+.filter-bar {
+  background: white;
+  border-radius: 14px;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 28px;
+}
+
+.filter-group {
+  flex: 1;
+  padding: 0 20px;
+  border-right: 1px solid var(--border);
+}
+
+.filter-group:first-child {
+  padding-left: 4px;
+}
+
+.filter-group:last-of-type {
+  border-right: none;
+}
+
+.filter-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.filter-select {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  background: transparent;
+  cursor: pointer;
+}
+
+.filter-select option {
+  font-weight: 500;
+}
+
+.search-btn {
+  flex-shrink: 0;
+  margin-left: 20px;
+  background: var(--navy);
+  color: white;
+  border: none;
+  border-radius: var(--radius-btn);
+  padding: 12px 28px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.search-btn:hover {
+  background: var(--navy-dark);
+  transform: translateY(-1px);
+}
+
+.search-btn:active {
+  transform: translateY(0);
+}
+
+.search-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: white;
+  fill: none;
+  stroke-width: 2.5;
+}
+
+/* ==========================================================================
+  SECTION HEADER
+   ========================================================================== */
+  
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--navy-dark);
+}
+
+.section-count {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.section-count span {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+/* ==========================================================================
+  PROPERTY GRID LAYOUT
+   ========================================================================== */
+  
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* ==========================================================================
+  PROPERTY CARD COMPONENT
+   ========================================================================== */
+  
+.prop-card {
+  background: white;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+
+.prop-card:hover {
+  box-shadow: var(--card-hover);
+  transform: translateY(-3px);
+}
+
+/* Image Area */
+.prop-img {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+
+.prop-img svg {
+  width: 100%;
+  height: 100%;
+}
+
+.prop-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--navy);
+  color: white;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 50px;
+}
+
+.prop-badge.rent {
+  background: #059669;
+}
+
+.prop-fav {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.prop-fav:hover {
+  background: white;
+}
+
+.prop-fav svg {
+  width: 15px;
+  height: 15px;
+  stroke: #e55353;
+  fill: none;
+  stroke-width: 2;
+}
+
+.prop-fav.liked svg {
+  fill: #e55353;
+}
+
+/* Card Body */
+.prop-body {
+  padding: 14px 16px 16px;
+}
+
+.prop-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+
+.prop-location svg {
+  width: 12px;
+  height: 12px;
+  stroke: var(--muted);
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+.prop-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Property Specs */
+.prop-specs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.prop-spec {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.prop-spec svg {
+  width: 13px;
+  height: 13px;
+  stroke: var(--muted);
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+/* Card Footer */
+.prop-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prop-price {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.btn-detail {
+  background: var(--navy);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background 0.15s;
+}
+
+.btn-detail:hover {
+  background: var(--navy-light);
+}
+
+.btn-detail svg {
+  width: 13px;
+  height: 13px;
+  stroke: white;
+  fill: none;
+  stroke-width: 2.5;
+}
+
+/* ==========================================================================
+  CUSTOM WEBKIT SCROLLBAR
+   ========================================================================== */
+  
+.content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
